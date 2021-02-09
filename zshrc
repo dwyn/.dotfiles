@@ -32,6 +32,9 @@ function antibody_new {
 }
 
 
+#! For Zinit
+source ~/.zinit/bin/zinit.zsh
+
 
 # Enable autocompletions
 autoload -Uz compinit
