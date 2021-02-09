@@ -1,16 +1,23 @@
 - defaults:
+    create: true
     link:
       relink: true
 
 - clean: ['~']
 
-# - link:
-#     ~/.tmux.conf: tmux.conf
-#     ~/.vim: vim
-#     ~/.vimrc: vimrc
+- link:
+    ~/.tmux.conf:
+    ~/.vim: 
+    ~/.vimrc:
+    ~/.zshrc:
+    ~/.gitconfig:
+    ~/.zsh_plugins.txt:
 
 - create:
-    - ~/Work
+    - ~/Development/Projects
 
-#- shell:
-#  - [git submodule update --init --recursive, Installing submodules]
+- shell:
+    # - [git submodule update --init --recursive, Installing submodules]
+    command: ./setup_homebrew.zsh
+    stdout: true
+    stderr: true
