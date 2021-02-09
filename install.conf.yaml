@@ -6,19 +6,20 @@
 - clean: ['~']
 
 - link:
-    ~/.tmux.conf:
-    ~/.vim: 
-    ~/.vimrc:
+    # ~/.tmux.conf:
+    # ~/.vim: 
+    # ~/.vimrc:
     ~/.zshrc:
     ~/.gitconfig:
-    ~/.zsh_plugins.txt:
 
 - create:
     - ~/Development/Projects
 
 - shell:
-    # - [git submodule update --init --recursive, Installing submodules]
-    command: ./setup_homebrew.zsh
-    command: ./setup_zinit.zsh
-    stdout: true
-    stderr: true
+    # command: ./setup_homebrew.zsh
+    -
+     command: ./setup_homebrew.zsh
+     stdout: true
+     sterr: true
+     description: INSTALL BREW
+     quiet: false

@@ -1,5 +1,4 @@
 # Did you know rc stands for "Run Commands"
-source ~/.zsh_plugins.sh # point to the plugins file
 
 # Set Variables
 #? Syntax highlighting for Man pages using Bat
@@ -33,7 +32,7 @@ function antibody_new {
 
 
 #! For Zinit
-source ~/.zinit/bin/zinit.zsh
+# source ~/.zinit/bin/zinit.zsh
 
 
 # Enable autocompletions
@@ -94,8 +93,8 @@ function mkcd() {
   mkdir -p "$@" && cd "$_";
 }
 
-iTerm stuff?
-source ~/.iterm2_shell_integration.zshexport PATH="/usr/local/opt/ncurses/bin:$PATH"
+# iTerm stuff?
+# source ~/.iterm2_shell_integration.zshexport PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 
 
