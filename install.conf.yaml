@@ -16,10 +16,43 @@
     - ~/Development/Projects
 
 - shell:
-    # command: ./setup_homebrew.zsh
     -
      command: ./setup_homebrew.zsh
+     stdin: true
      stdout: true
      sterr: true
-     description: INSTALL BREW
+     description: Installing Homebrew
      quiet: false
+    -
+     command: ./setup_ohmyzsh.zsh
+     stdout: true
+     sterr: true
+     description: Installing OhMyZsh
+    -
+     command: defaults write com.google.Keystone.Agent checkInterval 604800
+     stdout: true
+     sterr: true
+     description: Decreasing frequency of Chrome update checks
+    -
+     command: defaults write com.apple.dock expose-animation-duration -float 0.1
+     stdout: true
+     sterr: true
+     description: Make all animations faster that are used by Mission Control
+    -
+     command: defaults write com.apple.finder CreateDesktop false
+     stdout: true
+     sterr: true
+     description: Hide desktop apps and files
+    -
+     command: defaults write -g InitialKeyRepeat -int 9
+     stdout: true
+     sterr: true
+     description: Speed up initial keyrepeat
+    -
+     command: defaults write -g KeyRepeat -int .9 && killall finder
+     stdout: true
+     sterr: true
+     description: Speed up recurring keyrepeat
+                      
+
+

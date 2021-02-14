@@ -3,13 +3,12 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 # Shell plugin manager
-brew "antibody"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # Platform built on V8 to build network applications
-brew "node"Yeeea
+brew "node"
 # Contentful command-line tools
 brew "contentful-cli"
 # GNU File, Shell, and Text utilities
