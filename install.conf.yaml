@@ -1,5 +1,5 @@
 - defaults:
-    create: true
+    # create: true
     link:
       relink: true
 
@@ -18,7 +18,7 @@
 - shell:
     -
      command: ./setup_homebrew.zsh
-     stdin: true
+    #  stdin: true
      stdout: true
      sterr: true
      description: Installing Homebrew

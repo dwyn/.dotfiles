@@ -84,7 +84,7 @@ alias labs="cd ~/Development/Flatiron/labs"
 alias cpwd="printf '%s\n' "${PWD##*/}" | pbcopy && echo 'Copied😊 !'"
 alias showme="basename "$PWD" | pbcopy && echo 'Copied😊'"
 alias zshrc="code ~/.zshrc" # Quick access to the ~/.zshrc file
-alias ll="exa --tree --level=2 la -lah" # List the things
+alias ll="exa la -lah --tree --level=2" # List the things
 alias mmncs="mix meditate --no-clear-screen" # Mix Meditate No Clear Screen
 alias students="cd /Users/$USERNAME/Development/Flatiron/Students" # change directory to /Users/dwyn/Development/sc/students
 alias sgs="cd /Users/$USERNAME/Development/Flatiron/SGs" # change directory to /Users/dwyn/Development/sc/sgs
@@ -112,3 +112,11 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Potentional Aliases
 # git aliases: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 # Rails aliases: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rails
+
+# CMM Environment stuff
+# export PLATFORM_DEV = the path to your platform/dev checkout
+shovel() ( $PLATFORM_DEV/script/run shovel "$@"; )
+
+# For ASDF??
+# Documentation: https://asdf-vm.com/#/core-manage-asdf?id=add-to-your-shell
+. /usr/local/opt/asdf/asdf.sh
