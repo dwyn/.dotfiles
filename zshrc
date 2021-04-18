@@ -5,7 +5,6 @@ export ZSH="/Users/dharmon/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
-# "miloshadzic" <-- love this theme
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -51,10 +50,10 @@ HIST_STAMPS="mm/dd/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-autosuggestions
   zsh-syntax-highlighting
   colorize 
-  compleat 
+  zsh-autosuggestions
+  compleat
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -84,7 +83,8 @@ alias labs="cd ~/Development/Flatiron/labs"
 alias cpwd="printf '%s\n' "${PWD##*/}" | pbcopy && echo 'Copied😊 !'"
 alias showme="basename "$PWD" | pbcopy && echo 'Copied😊'"
 alias zshrc="code ~/.zshrc" # Quick access to the ~/.zshrc file
-alias ll="exa la -lah --tree --level=2" # List the things
+alias ll="exa -laBH --tree --level=2" # List the things
+# ls -lAHf
 alias mmncs="mix meditate --no-clear-screen" # Mix Meditate No Clear Screen
 alias students="cd /Users/$USERNAME/Development/Flatiron/Students" # change directory to /Users/dwyn/Development/sc/students
 alias sgs="cd /Users/$USERNAME/Development/Flatiron/SGs" # change directory to /Users/dwyn/Development/sc/sgs
@@ -94,6 +94,11 @@ alias tree="exa --tree --level=2" # update gatsby cli with npm i -g gatsby-cli
 alias gd="gatsby develop"
 alias t="rspec"
 alias tff="rspec --fail-fast"
+alias f="fzf"
+alias squash="git reset $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))"
+
+# CMM Shortcuts
+alias cmm="cd ~/Development/CMM/dev"
 
 # z installation (after `running brew install z`)
 source /usr/local/etc/profile.d/z.sh
@@ -115,8 +120,25 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # CMM Environment stuff
 # export PLATFORM_DEV = the path to your platform/dev checkout
-shovel() ( $PLATFORM_DEV/script/run shovel "$@"; )
+shovel() ( ~/Development/CMM/dev/script/run shovel "$@"; )
 
-# For ASDF??
-# Documentation: https://asdf-vm.com/#/core-manage-asdf?id=add-to-your-shell
-. /usr/local/opt/asdf/asdf.sh
+
+#* fzf *#
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_CTRL_T_OPTS=" --preview 'bat --style=numbers --color=always {} | head -500'"
+export BAT_THEME="GitHub"
+# Removes duplicates from fzf (from https://leetschau.github.io/remove-duplicate-zsh-history.html)
+# For more options check out: http://zsh.sourceforge.net/Doc/Release/Options.html
+# And this: https://scriptingosx.com/2019/06/moving-to-zsh-part-3-shell-options/
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_BEEP
+unsetopt correct_all
+
+
+export PATH="/usr/local/sbin:$PATH"

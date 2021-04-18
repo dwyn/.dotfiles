@@ -116,3 +116,37 @@ https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize
 ----------------------------------------------------------------------------
 compleat 
 https://github.com/mbrubeck/compleat
+
+----------------------------------------------------------------------------
+
+brew install fliqlo
+
+----------------------------------------------------------------------------
+
+Elixir via asdf
+
+asdf plugin-add elixir
+asdf plugin-add erlang
+brew install autoconf
+brew install wxmac
+brew install oracle-jdk
+asdf install erlang 22.3.1 # can take a long time
+asdf install elixir 1.8.1
+asdf global erlang 22.3.1
+
+DOCUMENTATION INFORMATION (See: /Users/dharmon/.asdf/plugins/erlang/kerl-home/builds/asdf_22.3.1/otp_build_22.3.1.log)
+ * documentation  :
+ *                  fop is missing.
+ *                  Using fakefop to generate placeholder PDF files.
+
+--------------------------------------------------------
+ https://github.com/junegunn/fzf#preview-window
+
+brew install fzf
+
+
+--------------------------------------------------------
+
+
+brew install bat
+https://github.com/sharkdp/bat#installation
